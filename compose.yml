@@ -8,7 +8,7 @@ services:
     volumes:
       - postgresql_data:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - 5431:5432
     healthcheck:
       test: pg_isready -U postgres -h 127.0.0.1
       interval: 5s
@@ -36,7 +36,7 @@ services:
       TZ: Asia/Tokyo
       REDIS_URL: redis://redis:6379/0
     ports:
-      - "3000:3000"
+      - "3001:3000"
     user: "1000:1000"
     depends_on:
       db:
